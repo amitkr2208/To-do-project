@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="consoleAppender"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %white(%d{ISO8601}) %highlight(%-5level) %X{traceId:-} %X{spanId:-} [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+    </appender>
+
+    <appender name="fileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+    </appender>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="fileAppender"/>
+    </root>
+
+    <logger name="com.cnh" level="INFO"/>
+    <logger name="org.springframework" level="INFO"/>
+</configuration>

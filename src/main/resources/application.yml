@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: todo-service
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically creates/updates tables
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todo
+    username: postgres
+    password: password
+    driverClassName: org.postgresql.Driver
+spring-doc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+#for open swagger ui in localHost
+#http://localhost:8080/swagger-ui.html
