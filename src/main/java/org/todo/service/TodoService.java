@@ -36,6 +36,7 @@ public class TodoService {
             TaskResponse taskResponse = getResponse(dao);
             taskResponseList.add(taskResponse);
         });
+        // here we use sort method
         taskResponseList.sort(Comparator.comparing(TaskResponse::getPriority).reversed());
         return taskResponseList;
     }
